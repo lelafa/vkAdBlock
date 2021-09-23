@@ -1,0 +1,28 @@
+{
+"manifest_version": 2,
+"name": "VK feed ad block",
+"version": "1.0",
+"description": "Hide ads in VK social network feed",
+"author": "lelafa",
+"permissions": [
+    "activeTab"
+],
+"content_scripts": [
+  {
+    "matches": ["https://vk.com/*","https://m.vk.com/*"],
+    "js": ["js/background.js"]
+  }
+],
+"background": {
+   "scripts": ["js/background.js"]
+  },
+"browser_action" : {
+    "default_icon" : "images/icon.png"
+},
+"icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128":"images/icon.png"
+   }
+}
