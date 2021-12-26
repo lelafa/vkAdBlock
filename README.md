@@ -1,3 +1,3 @@
 # vkAdBlock
-A simple adblock I made
-Things works in VK browser, hiding ads from the news feed.
+A simple adblock
+Things works in browser, on vk.com website, hiding ads from the news feed.
