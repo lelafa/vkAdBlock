@@ -1,22 +1,16 @@
-const resizeObserver = new ResizeObserver(entries => {
-    for (let entry of entries) {
-        if(entry.contentBoxSize) {
-            function VkBlock(displayState, ...className ){
-                
-                var elements = document.getElementsByClassName(className)
-                
-                for (var i = 0; i < elements.length; i++){
-                    elements[i].style.display = displayState;
-                    console.log(loop)
-                }
-                console.log('runned')
+const resize_ob = new ResizeObserver(function(entries) {
 
-            }
+    function vkBlock(displayState, ...className ){
 
-            VkBlock( 'none', '_ads_block_data_w', 'apps_feedRightAppsBlock__row')
+        let element = document.getElementsByClassName(...className)
+
+        for (let i = 0; i < element.length; i++){
+                element[i].style.display = displayState;
         }
+
     }
-console.log('Size changed');
+
+    vkBlock( 'none', '_ads_block_data_w', 'apps_feedRightAppsBlock__row', 'ads_ads_box')
 });
-//window.onscroll = () => VkBlock( 'none', '_ads_block_data_w', 'apps_feedRightAppsBlock__row')
-resizeObserver.observe(document.getElementsByClassName('upanel').item(0));
+
+resize_ob.observe(document.querySelector("#feed_rows"));
